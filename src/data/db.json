@@ -1,0 +1,69 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "My event",
+      "address": "Mi direccion",
+      "country": "Mexico",
+      "city": "CDMX",
+      "state": "Estado",
+      "date": "15/02/2021",
+      "timeStart": "15:30",
+      "timeEnd": "16:20",
+      "description": "bla bla bla",
+      "user": "SeleneEG"
+    },
+    {
+      "id": 2,
+      "title": "My event",
+      "address": "Mi direccion",
+      "country": "Mexico",
+      "city": "CDMX",
+      "state": "Estado",
+      "date": "15/02/2021",
+      "timeStart": "15:30",
+      "timeEnd": "16:20",
+      "description": "bla bla bla",
+      "user": "SeleneEG"
+    },
+    {
+      "id": 3,
+      "title": "My event",
+      "address": "Mi direccion",
+      "country": "Mexico",
+      "city": "CDMX",
+      "state": "Estado",
+      "date": "15/02/2021",
+      "timeStart": "15:30",
+      "timeEnd": "16:20",
+      "description": "bla bla bla",
+      "user": "SeleneEG"
+    },
+    {
+      "id": 4,
+      "title": "My event",
+      "address": "Mi direccion",
+      "country": "Mexico",
+      "city": "CDMX",
+      "state": "Estado",
+      "date": "15/02/2021",
+      "timeStart": "15:30",
+      "timeEnd": "16:20",
+      "description": "bla bla bla",
+      "user": "SeleneEG"
+    },
+    {
+      "id": 5,
+      "title": "My event",
+      "address": "Mi direccion",
+      "country": "Mexico",
+      "city": "CDMX",
+      "state": "Estado",
+      "date": "15/02/2021",
+      "timeStart": "15:30",
+      "timeEnd": "16:20",
+      "description": "bla bla bla",
+      "user": "SeleneEG"
+    }
+  ]
+}
