@@ -16,21 +16,6 @@ export function create(data) {
   };
 }
 
-export function update(data) {
-  return async (dispatch) => {
-    const fetchData = async () => {
-      let response = await http.put(`/events/${data.id}`, data);
-      return response.data;
-    };
-
-    try {
-      const data = await fetchData();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
 export function deleteEvent(id) {
   return async (dispatch) => {
     const fetchData = async () => {

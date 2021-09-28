@@ -16,8 +16,16 @@ const IndexSlice = createSlice({
       let objTemp = actions.payload;
       state.objEvent = {
         id: objTemp.id,
-        name: objTemp.name,
-        email: objTemp.email,
+        title: objTemp.title,
+        address: objTemp.address,
+        country: objTemp.country,
+        state: objTemp.state,
+        city: objTemp.city,
+        date: objTemp.date,
+        timeStart: objTemp.timeStart,
+        timeEnd: objTemp.timeEnd,
+        description: objTemp.description,
+        user: objTemp.user,
       };
     },
     getAllEvents(state, actions) {

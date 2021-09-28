@@ -4,16 +4,16 @@ import NavBar from "./NavBar";
 import { IndexActions } from "../store/Index-slice";
 import { useHistory } from "react-router-dom";
 import { create, getAll } from "../thunks/event-action";
-import { getCities } from "../thunks/location-actions";
+import { getCitiesState } from "../thunks/location-actions";
 
-function FrmUsuario() {
+function FrmEvent() {
   const history = useHistory();
   const dispatch = useDispatch();
-  // const location = useSelector((state) => state.Index.userRegion);
   const LocationStates = useSelector((state) => state.Location.LocationStates);
   const StateCities = useSelector((state) => state.Location.StateCities);
   const UserRegion = useSelector((state) => state.Index.userRegion);
 
+  const [loadedCities, loadedCitiesChangeHandler] = useState([]);
   const [enteredTitle, titleChangeHandler] = useState("");
   const [enteredAddress, addressChangeHandler] = useState("");
   const [enteredState, stateChangeHandler] = useState("");
@@ -23,7 +23,9 @@ function FrmUsuario() {
   const [enteredTimeEnd, timeEndChangeHandler] = useState("");
   const [enteredDescription, descriptionChangeHandler] = useState("");
 
-  useEffect(() => {}, [dispatch]);
+  useEffect(() => {
+    loadedCitiesChangeHandler(StateCities);
+  }, [dispatch, StateCities]);
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -37,19 +39,18 @@ function FrmUsuario() {
       timeStart: enteredTimeStart,
       timeEnd: enteredTimeEnd,
       description: enteredDescription,
+      user: "SeleneEG",
     };
-    console.log(`>>>>>>>>> ${JSON.stringify(payload)}`);
 
-    // dispatch(getCities("Veracruz"));
-    // dispatch(create(payload));
-    // dispatch(getAll());
-    // dispatch(IndexActions.setstrtMsg("Event added successfully!"));
-    // dispatch(IndexActions.toggleStrMsg(true));
-    // history.push("/");
+    dispatch(create(payload));
+    dispatch(getAll());
+    dispatch(IndexActions.setstrtMsg("Event added successfully!"));
+    dispatch(IndexActions.toggleStrMsg(true));
+    history.push("/index");
   };
 
-  const regresar = () => {
-    history.push("/");
+  const goBack = () => {
+    history.push("/index");
   };
 
   const selectStates = () => {
@@ -62,12 +63,19 @@ function FrmUsuario() {
   };
 
   const selectCities = () => {
-    let content = StateCities.map((element) => (
+    let content = loadedCities.map((element) => (
       <option value={element} key={element}>
         {element}
       </option>
     ));
     return content;
+  };
+
+  const selectStateHandler = (event) => {
+    stateChangeHandler(event.target.value);
+    console.log(`Selected State ${event.target.value}`);
+    dispatch(getCitiesState(UserRegion, event.target.value));
+    loadedCitiesChangeHandler(StateCities);
   };
 
   return (
@@ -80,12 +88,7 @@ function FrmUsuario() {
             <div className="col-sm-6 card card-margin">
               <h1>Register Event</h1>
               <div className="card-body pt-0">
-                <form
-                  role="form"
-                  id="db-form"
-                  name="db-form"
-                  onSubmit={formSubmitHandler}
-                >
+                <form id="db-form" name="db-form" onSubmit={formSubmitHandler}>
                   <div className="form-group-attached">
                     <div className="row">
                       <div className="col-md-12">
@@ -131,9 +134,7 @@ function FrmUsuario() {
                             name="state"
                             id="state"
                             className="form-control"
-                            onChange={(event) =>
-                              stateChangeHandler(event.target.value)
-                            }
+                            onChange={selectStateHandler}
                             value={enteredState || ""}
                             required
                           >
@@ -235,12 +236,12 @@ function FrmUsuario() {
                   <div className="row">
                     <div className="form-group">
                       <div className="btn pull-right">
-                        <button className="btn btn-info" onClick={regresar}>
-                          Regresar
+                        <button className="btn btn-info" onClick={goBack}>
+                          Back
                         </button>
                         &nbsp;
                         <button type="submit" className="btn btn-primary">
-                          Guardar
+                          Save
                         </button>
                       </div>
                     </div>
@@ -255,4 +256,4 @@ function FrmUsuario() {
   );
 }
 
-export default FrmUsuario;
+export default FrmEvent;

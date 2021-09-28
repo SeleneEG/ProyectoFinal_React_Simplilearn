@@ -1,4 +1,30 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "userName": "SeleneEG",
+      "email": "seleneeg@test.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "userName": "test1",
+      "email": "test1@test.com",
+      "password": "1234"
+    },
+    {
+      "userName": "test2",
+      "email": "zc@asd.com",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "userName": "test3",
+      "email": "zc@asd.com",
+      "password": "12345",
+      "id": 4
+    }
+  ],
   "events": [
     {
       "id": 1,
@@ -7,7 +33,7 @@
       "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
-      "date": "15/02/2021",
+      "date": "2021-09-29",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -20,7 +46,7 @@
       "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
-      "date": "15/02/2021",
+      "date": "2021-09-29",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -33,7 +59,7 @@
       "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
-      "date": "15/02/2021",
+      "date": "2021-09-29",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -46,7 +72,7 @@
       "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
-      "date": "15/02/2021",
+      "date": "2021-09-29",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -59,11 +85,37 @@
       "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
-      "date": "15/02/2021",
+      "date": "2021-09-29",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
       "user": "SeleneEG"
+    },
+    {
+      "title": "asd",
+      "address": "zxc",
+      "country": "Mexico",
+      "state": "Veracruz",
+      "city": "Orizaba",
+      "date": "2021-09-09",
+      "timeStart": "08:14",
+      "timeEnd": "08:14",
+      "description": "ioj",
+      "user": "SeleneEG",
+      "id": 6
+    },
+    {
+      "title": "asdzczc",
+      "address": "zxc",
+      "country": "Mexico",
+      "state": "Mexico City",
+      "city": "Benito Juárez",
+      "date": "2021-09-29",
+      "timeStart": "09:13",
+      "timeEnd": "00:13",
+      "description": "zxc",
+      "user": "SeleneEG",
+      "id": 7
     }
   ]
 }

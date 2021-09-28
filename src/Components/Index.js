@@ -11,6 +11,7 @@ function Index() {
   const history = useHistory();
   let i;
   const dispatch = useDispatch();
+  const UserRegion = useSelector((state) => state.Index.userRegion);
   const strMsg = useSelector((state) => state.Index.strMsg);
   const showStrMsg = useSelector((state) => state.Index.showStrMsg);
   const ObjRst = useSelector((state) => state.Index.ObjRst);
@@ -40,9 +41,9 @@ function Index() {
                   <span className="widget-49-date-month">apr</span>
                 </div>
                 <div className="widget-49-meeting-info">
-                  <span className="widget-49-pro-title">{element.title}</span>
+                  <span className="widget-49-pro-title">{element?.title}</span>
                   <span className="widget-49-meeting-time">
-                    {element.timeStart} to {element.timeEnd} Hrs
+                    {element?.timeStart} to {element?.timeEnd} Hrs
                   </span>
                 </div>
               </div>
@@ -86,7 +87,7 @@ function Index() {
 
   function getEvent(var1) {
     dispatch(get(var1));
-    history.push("/formulario");
+    history.push("/details");
   }
 
   function deleteUsuario() {
@@ -102,7 +103,7 @@ function Index() {
   }
 
   function addEvent() {
-    history.push("/formulario");
+    history.push("/register");
   }
 
   const handleClose = () => {
@@ -120,7 +121,7 @@ function Index() {
 
   return (
     <Fragment>
-      <title>CRUD ASP Clásico</title>
+      <title>FindMyEvents</title>
       <NavBar />
       <div className="container">
         {showStrMsg ? (
@@ -134,7 +135,7 @@ function Index() {
           <div></div>
         )}
         <div className="starter-template">
-          <h1>Events</h1>
+          <h1>Events in {UserRegion}</h1>
           <div className="row">
             <div className="col-md-8">
               <p align="left">
