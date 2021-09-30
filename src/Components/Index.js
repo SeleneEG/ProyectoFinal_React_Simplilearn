@@ -1,11 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { IndexActions } from "../store/Index-slice";
 import { useHistory } from "react-router-dom";
 import { get, deleteEvent, getAll } from "../thunks/event-action";
 import NavBar from "./NavBar";
+import sadFace from "../assets/img/sad_face.gif";
 
 function Index() {
   const history = useHistory();
@@ -15,10 +16,12 @@ function Index() {
   const strMsg = useSelector((state) => state.Index.strMsg);
   const showStrMsg = useSelector((state) => state.Index.showStrMsg);
   const ObjRst = useSelector((state) => state.Index.ObjRst);
+  const userSession = useSelector((state) => state.User.userSession);
+  const isAdmin = useSelector((state) => state.User.isAdmin);
 
   useEffect(() => {
     dispatch(getAll());
-  }, [dispatch]);
+  }, [dispatch, ObjRst]);
 
   useEffect(() => {
     window.setTimeout(() => {
@@ -26,61 +29,130 @@ function Index() {
     }, 2000);
   }, [strMsg]);
 
+  function deleteButton(element) {
+    if (isAdmin || userSession === element.user) {
+      return (
+        <button
+          onClick={() => {
+            handleShowModal(element.id);
+          }}
+          className="btn btn-sm btn-flash-border-primary"
+        >
+          Delete
+        </button>
+      );
+    }
+  }
+
   function getEvents() {
-    let content = ObjRst.map((element) => (
-      <div className="col-lg-4" key={element.id}>
-        <div className="card card-margin">
-          <div className="card-header no-border">
-            <h5 className="card-title">MOM</h5>
-          </div>
-          <div className="card-body pt-0">
-            <div className="widget-49">
-              <div className="widget-49-title-wrapper">
-                <div className="widget-49-date-success">
-                  <span className="widget-49-date-day">09</span>
-                  <span className="widget-49-date-month">apr</span>
-                </div>
-                <div className="widget-49-meeting-info">
-                  <span className="widget-49-pro-title">{element?.title}</span>
-                  <span className="widget-49-meeting-time">
-                    {element?.timeStart} to {element?.timeEnd} Hrs
-                  </span>
-                </div>
+    var days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    let content;
+
+    if (ObjRst.filter((element) => element.country === UserRegion).length > 0) {
+      content = ObjRst.filter((element) => element.country === UserRegion)
+        .filter(
+          (element) => new Date(element.date).getTime() >= new Date().getTime()
+        )
+        .map((element) => (
+          <div className="col-lg-4" key={element.id}>
+            <div className="card card-margin">
+              <div className="card-header no-border">
+                <h5 className="card-title">
+                  {days[new Date(element.date).getUTCDay()]}
+                </h5>
               </div>
-              <ol className="widget-49-meeting-points">
-                <li className="widget-49-meeting-item">
-                  <span>Expand module is removed</span>
-                </li>
-                <li className="widget-49-meeting-item">
-                  <span>Data migration is in scope</span>
-                </li>
-                <li className="widget-49-meeting-item">
-                  <span>Session timeout increase to 30 minutes</span>
-                </li>
-              </ol>
-              <div className="widget-49-meeting-action">
-                <button
-                  onClick={() => {
-                    getEvent(element.id);
-                  }}
-                  className="btn btn-sm btn-flash-border-primary"
-                >
-                  View Details
-                </button>
-                <button
-                  onClick={() => {
-                    handleShowModal(element.id);
-                  }}
-                  className="btn btn-sm btn-flash-border-primary"
-                >
-                  Delete
-                </button>
+              <div className="card-body pt-0">
+                <div className="widget-49">
+                  <div className="widget-49-title-wrapper">
+                    <div className="widget-49-date-success">
+                      <span className="widget-49-date-day">
+                        {new Date(element.date).getUTCDate()}
+                      </span>
+                      <span className="widget-49-date-month">
+                        {months[new Date(element.date).getMonth()]}
+                      </span>
+                    </div>
+                    <div className="widget-49-meeting-info">
+                      <span className="widget-49-pro-title">
+                        {element.title}
+                      </span>
+                      <span className="widget-49-meeting-time">
+                        Posted by {element.user}
+                      </span>
+                    </div>
+                  </div>
+                  <br />
+                  <ul className="widget-49-meeting-points">
+                    <li className="widget-49-meeting-item">
+                      <span>
+                        {element.timeStart} to {element.timeEnd} Hrs
+                      </span>
+                    </li>
+                    <li className="widget-49-meeting-item">
+                      <span>{element?.address}</span>
+                    </li>
+                    <li className="widget-49-meeting-item">
+                      <span>
+                        {element.city}, {element.state}
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="widget-49-meeting-action">
+                    <button
+                      onClick={() => {
+                        getEvent(element.id);
+                      }}
+                      className="btn btn-sm btn-flash-border-primary"
+                    >
+                      View Details
+                    </button>
+                    {deleteButton(element)}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        ));
+    } else {
+      content = (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 d-flex justify-content-center">
+              <Image src={sadFace} rounded />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 d-flex justify-content-center">
+              <h3>No events were found in {UserRegion}</h3>
+            </div>
+          </div>
         </div>
-      </div>
-    ));
+      );
+    }
 
     return content;
   }
@@ -158,15 +230,15 @@ function Index() {
       </div>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header>
-          <Modal.Title>Confirmación</Modal.Title>
+          <Modal.Title>Delete Event</Modal.Title>
         </Modal.Header>
-        <Modal.Body>¿Está seguro de eliminar el registro?</Modal.Body>
+        <Modal.Body>Are you sure to delete the event?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            Cancelar
+            Cancel
           </Button>
           <Button variant="primary" onClick={deleteUsuario}>
-            Eliminar
+            Delete
           </Button>
         </Modal.Footer>
       </Modal>

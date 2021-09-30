@@ -12,6 +12,7 @@ function FrmEvent() {
   const LocationStates = useSelector((state) => state.Location.LocationStates);
   const StateCities = useSelector((state) => state.Location.StateCities);
   const UserRegion = useSelector((state) => state.Index.userRegion);
+  const userSession = useSelector((state) => state.User.userSession);
 
   const [loadedCities, loadedCitiesChangeHandler] = useState([]);
   const [enteredTitle, titleChangeHandler] = useState("");
@@ -39,7 +40,7 @@ function FrmEvent() {
       timeStart: enteredTimeStart,
       timeEnd: enteredTimeEnd,
       description: enteredDescription,
-      user: "SeleneEG",
+      user: userSession,
     };
 
     dispatch(create(payload));
@@ -175,6 +176,7 @@ function FrmEvent() {
                               dateChangeHandler(event.target.value)
                             }
                             value={enteredDate || ""}
+                            min={new Date().toLocaleDateString("en-ca")}
                             required
                           />
                         </div>

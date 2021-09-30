@@ -10,8 +10,6 @@ function EventDetails() {
   const SelectedEvent = useSelector((state) => state.Index.objEvent);
   const [objSelectedEvent, setEventSelected] = useState(null);
 
-  const objFormatData = {};
-
   useEffect(() => {
     setEventSelected(SelectedEvent);
   }, [SelectedEvent, dispatch]);
@@ -20,17 +18,26 @@ function EventDetails() {
     history.push("/index");
   };
 
-  const formatDate = (eventDate) => {
+  const formatDate = (date) => {
     var options = {
       weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
     };
-    if (eventDate) {
-      var today = new Date(eventDate);
-      let fecha = today.toLocaleDateString("en-US", options);
-      return fecha;
+    if (date) {
+      let eventDate = new Date(date);
+
+      let today = new Date(
+        eventDate.getUTCFullYear() +
+          "-" +
+          (eventDate.getUTCMonth() + 1) +
+          "-" +
+          eventDate.getUTCDate()
+      );
+      let formatDate = today.toLocaleDateString("en-US", options);
+
+      return formatDate;
     }
   };
 
@@ -46,6 +53,9 @@ function EventDetails() {
                   <strong>
                     <h1>{objSelectedEvent?.title}</h1>
                   </strong>
+                </div>
+                <div className="card-header no-border">
+                  Posted by: &nbsp; <strong>{objSelectedEvent?.user}</strong>
                 </div>
                 <div className="card-body pt-0">
                   <div className="widget-49">

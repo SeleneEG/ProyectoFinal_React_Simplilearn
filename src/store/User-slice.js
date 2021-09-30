@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialUserState = {
   userSession: "",
+  isAdmin: false,
 };
 
 const UserSlice = createSlice({
@@ -9,8 +10,8 @@ const UserSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     setUserSession(state, actions) {
-      state.userSession = actions.payload;
-      console.log(`>>>>>>>>>>> Usuario en sesión ${actions.payload}`);
+      state.userSession = actions.payload["userName"];
+      state.isAdmin = actions.payload["admin"];
     },
   },
 });

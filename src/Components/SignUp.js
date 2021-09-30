@@ -22,6 +22,7 @@ function SignUp() {
       userName: enteredUsername,
       email: enteredEmail,
       password: enteredPassword,
+      admin: false,
     };
 
     dispatch(singup(payload));

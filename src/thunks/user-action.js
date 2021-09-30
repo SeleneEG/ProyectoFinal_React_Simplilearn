@@ -19,13 +19,15 @@ export function singup(data) {
 export function login(userName, pass) {
   return async (dispatch) => {
     const fetchData = async () => {
-      let response = await http.get(`/users?userName=SeleneEG&password=1234`);
+      let response = await http.get(
+        `/users?userName=${userName}&password=${pass}`
+      );
       return response.data;
     };
 
     try {
       const data = await fetchData();
-      dispatch(UserActions.setUserSession(data[0]["userName"]));
+      dispatch(UserActions.setUserSession(data[0]));
     } catch (error) {
       console.log(error);
     }

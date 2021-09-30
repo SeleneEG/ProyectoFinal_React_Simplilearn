@@ -1,7 +1,13 @@
-import { Fragment } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Fragment, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Navbar, Nav, Form, Button } from "react-bootstrap";
 
 function NavBar() {
+  const dispatch = useDispatch();
+  const userSession = useSelector((state) => state.User.userSession);
+
+  useEffect(() => {}, [dispatch, userSession]);
+
   return (
     <Fragment>
       <Navbar bg="dark" variant="dark" expand="md" fixed="top">
@@ -14,30 +20,13 @@ function NavBar() {
             navbarScroll
           ></Nav>
         </Navbar.Collapse>
+        <Form className="d-flex">
+          <Navbar.Text>
+            Signed in as: <b>{userSession}</b>
+          </Navbar.Text>
+          <Button variant="outline-info">Log out</Button>
+        </Form>
       </Navbar>
-      {/* <link href="css/bootstrap.min.css" rel="stylesheet" /> */}
-      {/* <nav className="navbar navbar-inverse navbar-fixed-top">
-    <div className="container">
-    <div className="navbar-header">
-    <button
-    type="button"
-    className="navbar-toggle collapsed"
-    data-toggle="collapse"
-    data-target="#navbar"
-    aria-expanded="false"
-    aria-controls="navbar"
-    >
-    <span className="sr-only">Toggle navigation</span>
-    <span className="icon-bar"></span>
-    <span className="icon-bar"></span>
-    <span className="icon-bar"></span>
-    </button>
-    <a className="navbar-brand" href="index.asp">
-    CRUD ASP
-    </a>
-    </div>
-    </div>
-</nav> */}
     </Fragment>
   );
 }

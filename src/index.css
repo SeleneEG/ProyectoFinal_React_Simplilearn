@@ -363,3 +363,7 @@ body {
 .description {
   white-space: pre-line;
 }
+
+ul {
+  list-style-type: none;
+}

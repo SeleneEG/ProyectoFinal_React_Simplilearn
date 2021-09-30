@@ -4,25 +4,29 @@
       "id": 1,
       "userName": "SeleneEG",
       "email": "seleneeg@test.com",
-      "password": "1234"
+      "password": "1234",
+      "admin": true
     },
     {
       "id": 2,
       "userName": "test1",
       "email": "test1@test.com",
-      "password": "1234"
+      "password": "1234",
+      "admin": false
     },
     {
       "userName": "test2",
       "email": "zc@asd.com",
       "password": "12345",
-      "id": 3
+      "id": 3,
+      "admin": false
     },
     {
       "userName": "test3",
       "email": "zc@asd.com",
       "password": "12345",
-      "id": 4
+      "id": 4,
+      "admin": false
     }
   ],
   "events": [
@@ -30,10 +34,10 @@
       "id": 1,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Mexico",
+      "country": "Germany",
       "city": "CDMX",
       "state": "Estado",
-      "date": "2021-09-29",
+      "date": "2021-9-12",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -43,23 +47,10 @@
       "id": 2,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Mexico",
+      "country": "Germany",
       "city": "CDMX",
       "state": "Estado",
-      "date": "2021-09-29",
-      "timeStart": "15:30",
-      "timeEnd": "16:20",
-      "description": "bla bla bla",
-      "user": "SeleneEG"
-    },
-    {
-      "id": 3,
-      "title": "My event",
-      "address": "Mi direccion",
-      "country": "Mexico",
-      "city": "CDMX",
-      "state": "Estado",
-      "date": "2021-09-29",
+      "date": "2021-10-13",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -69,10 +60,10 @@
       "id": 4,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Mexico",
+      "country": "Germany",
       "city": "CDMX",
       "state": "Estado",
-      "date": "2021-09-29",
+      "date": "2021-10-15",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -82,10 +73,10 @@
       "id": 5,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Mexico",
+      "country": "Germany",
       "city": "CDMX",
       "state": "Estado",
-      "date": "2021-09-29",
+      "date": "2021-10-16",
       "timeStart": "15:30",
       "timeEnd": "16:20",
       "description": "bla bla bla",
@@ -94,10 +85,10 @@
     {
       "title": "asd",
       "address": "zxc",
-      "country": "Mexico",
+      "country": "Germany",
       "state": "Veracruz",
       "city": "Orizaba",
-      "date": "2021-09-09",
+      "date": "2021-10-17",
       "timeStart": "08:14",
       "timeEnd": "08:14",
       "description": "ioj",
@@ -107,15 +98,41 @@
     {
       "title": "asdzczc",
       "address": "zxc",
-      "country": "Mexico",
-      "state": "Mexico City",
+      "country": "Germany",
+      "state": "Germany City",
       "city": "Benito Juárez",
-      "date": "2021-09-29",
+      "date": "2021-10-18",
       "timeStart": "09:13",
       "timeEnd": "00:13",
       "description": "zxc",
       "user": "SeleneEG",
       "id": 7
+    },
+    {
+      "title": "Student Giggles",
+      "address": "The Fringe Bar, 26 Allen Street",
+      "country": "Germany",
+      "state": "Hidalgo",
+      "city": "Atlapexco",
+      "date": "2021-10-19",
+      "timeStart": "01:44",
+      "timeEnd": "10:49",
+      "description": "Comedy for students by students!\nEIGHT all-star student comedians take to the stage for a night of debt-reducing comedy.\n\nMC'd by “The Capital’s Funniest Bear” Neil Thornton!\n\nSeriously this lineup is STACKED.\nWe've got Award Winners.\nWe've got Raw Quest Finalists.\nWe've even got Unemployment Benefit Recipients!\n\nAll this for only $15?!?\nThat’s not even two jugs at JJs!\nSounds so good it is true!\n\nSo why not? Come finish the semester with some f*cking laughs!",
+      "user": "test1",
+      "id": 8
+    },
+    {
+      "title": "sd",
+      "address": "zxc",
+      "country": "Germany",
+      "state": "Chiapas",
+      "city": "Acapetahua",
+      "date": "2021-10-03",
+      "timeStart": "08:44",
+      "timeEnd": "08:47",
+      "description": "dasd",
+      "user": "test1",
+      "id": 11
     }
   ]
 }
