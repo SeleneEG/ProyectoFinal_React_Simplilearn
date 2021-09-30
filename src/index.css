@@ -367,3 +367,8 @@ body {
 ul {
   list-style-type: none;
 }
+
+.required {
+  color: red;
+  font-weight: bold;
+}

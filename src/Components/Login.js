@@ -11,18 +11,34 @@ function Login() {
   const user = useSelector((state) => state.User.userSession);
   const [enteredUsername, usernameChangeHandler] = useState("");
   const [enteredPassword, passwordChangeHandler] = useState("");
+  const [showStrMsg, handleShowMsg] = useState(false);
 
   useEffect(() => {}, [user]);
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch(login(enteredUsername, enteredPassword));
-    history.push("/index");
+    dispatch(login(enteredUsername, enteredPassword)).then(() => {
+      if (sessionStorage.userSession) {
+        history.push("/index");
+      } else {
+        handleShowMsg(true);
+      }
+    });
   };
 
   const goToSignup = () => {
     history.push("/signup");
   };
+
+  const handleClose = () => {
+    handleShowMsg(false);
+  };
+
+  useEffect(() => {
+    window.setTimeout(() => {
+      handleShowMsg(false);
+    }, 3000);
+  }, [showStrMsg]);
 
   return (
     <Fragment>
@@ -34,6 +50,16 @@ function Login() {
               name="form-singin"
               onSubmit={formSubmitHandler}
             >
+              {showStrMsg ? (
+                <div className="alert alert-danger">
+                  The username or password is incorrect
+                  <button className="close" onClick={handleClose}>
+                    x
+                  </button>
+                </div>
+              ) : (
+                <div></div>
+              )}
               <h3>Sign In</h3>
 
               <div className="form-group">

@@ -1,4 +1,4 @@
-import http from "../data/http-common";
+import http from "./http-common";
 import { IndexActions } from "../store/Index-slice";
 
 export function create(data) {

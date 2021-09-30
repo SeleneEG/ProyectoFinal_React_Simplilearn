@@ -1,4 +1,4 @@
-import http from "../data/http-common";
+import http from "./http-common";
 import { UserActions } from "../store/User-slice";
 
 export function singup(data) {
@@ -19,9 +19,11 @@ export function singup(data) {
 export function login(userName, pass) {
   return async (dispatch) => {
     const fetchData = async () => {
-      let response = await http.get(
-        `/users?userName=${userName}&password=${pass}`
-      );
+      let response = await http
+        .get(`/users?userName=${userName}&password=${pass}`)
+        .then((resp) => {
+          return resp;
+        });
       return response.data;
     };
 

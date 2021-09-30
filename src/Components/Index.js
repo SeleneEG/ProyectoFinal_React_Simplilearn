@@ -16,8 +16,8 @@ function Index() {
   const strMsg = useSelector((state) => state.Index.strMsg);
   const showStrMsg = useSelector((state) => state.Index.showStrMsg);
   const ObjRst = useSelector((state) => state.Index.ObjRst);
-  const userSession = useSelector((state) => state.User.userSession);
-  const isAdmin = useSelector((state) => state.User.isAdmin);
+  const userSession = sessionStorage.userSession;
+  const isAdmin = sessionStorage.isAdmin;
 
   useEffect(() => {
     dispatch(getAll());
@@ -30,7 +30,7 @@ function Index() {
   }, [strMsg]);
 
   function deleteButton(element) {
-    if (isAdmin || userSession === element.user) {
+    if (isAdmin === "true" || userSession === element.user) {
       return (
         <button
           onClick={() => {
@@ -167,7 +167,7 @@ function Index() {
     dispatch(getAll());
     setShow(false);
     dispatch(IndexActions.toggleStrMsg(true));
-    dispatch(IndexActions.setstrtMsg("Registro borrado exitosamente"));
+    dispatch(IndexActions.setstrtMsg("Event successfully removed"));
 
     window.setTimeout(() => {
       handleClose();

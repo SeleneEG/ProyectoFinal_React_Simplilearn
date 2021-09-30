@@ -1,12 +1,19 @@
 import { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Navbar, Nav, Form, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { UserActions } from "../store/User-slice";
 
 function NavBar() {
   const dispatch = useDispatch();
-  const userSession = useSelector((state) => state.User.userSession);
+  const history = useHistory();
 
-  useEffect(() => {}, [dispatch, userSession]);
+  useEffect(() => {}, [dispatch]);
+
+  function logout() {
+    dispatch(UserActions.logout());
+    history.push("/");
+  }
 
   return (
     <Fragment>
@@ -22,9 +29,11 @@ function NavBar() {
         </Navbar.Collapse>
         <Form className="d-flex">
           <Navbar.Text>
-            Signed in as: <b>{userSession}</b>
+            Signed in as: <b>{sessionStorage.userSession}</b>
           </Navbar.Text>
-          <Button variant="outline-info">Log out</Button>
+          <Button variant="outline-info" onClick={logout}>
+            Logout
+          </Button>
         </Form>
       </Navbar>
     </Fragment>

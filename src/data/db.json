@@ -34,7 +34,7 @@
       "id": 1,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Germany",
+      "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
       "date": "2021-9-12",
@@ -47,7 +47,7 @@
       "id": 2,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Germany",
+      "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
       "date": "2021-10-13",
@@ -60,7 +60,7 @@
       "id": 4,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Germany",
+      "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
       "date": "2021-10-15",
@@ -73,7 +73,7 @@
       "id": 5,
       "title": "My event",
       "address": "Mi direccion",
-      "country": "Germany",
+      "country": "Mexico",
       "city": "CDMX",
       "state": "Estado",
       "date": "2021-10-16",
@@ -85,7 +85,7 @@
     {
       "title": "asd",
       "address": "zxc",
-      "country": "Germany",
+      "country": "Mexico",
       "state": "Veracruz",
       "city": "Orizaba",
       "date": "2021-10-17",
@@ -96,22 +96,9 @@
       "id": 6
     },
     {
-      "title": "asdzczc",
-      "address": "zxc",
-      "country": "Germany",
-      "state": "Germany City",
-      "city": "Benito Juárez",
-      "date": "2021-10-18",
-      "timeStart": "09:13",
-      "timeEnd": "00:13",
-      "description": "zxc",
-      "user": "SeleneEG",
-      "id": 7
-    },
-    {
       "title": "Student Giggles",
       "address": "The Fringe Bar, 26 Allen Street",
-      "country": "Germany",
+      "country": "Mexico",
       "state": "Hidalgo",
       "city": "Atlapexco",
       "date": "2021-10-19",
@@ -120,19 +107,6 @@
       "description": "Comedy for students by students!\nEIGHT all-star student comedians take to the stage for a night of debt-reducing comedy.\n\nMC'd by “The Capital’s Funniest Bear” Neil Thornton!\n\nSeriously this lineup is STACKED.\nWe've got Award Winners.\nWe've got Raw Quest Finalists.\nWe've even got Unemployment Benefit Recipients!\n\nAll this for only $15?!?\nThat’s not even two jugs at JJs!\nSounds so good it is true!\n\nSo why not? Come finish the semester with some f*cking laughs!",
       "user": "test1",
       "id": 8
-    },
-    {
-      "title": "sd",
-      "address": "zxc",
-      "country": "Germany",
-      "state": "Chiapas",
-      "city": "Acapetahua",
-      "date": "2021-10-03",
-      "timeStart": "08:44",
-      "timeEnd": "08:47",
-      "description": "dasd",
-      "user": "test1",
-      "id": 11
     }
   ]
 }

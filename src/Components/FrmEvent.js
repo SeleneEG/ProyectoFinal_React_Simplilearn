@@ -94,7 +94,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="form-group">
-                          <label>Title: </label>
+                          <label>
+                            Title<span className="required">*</span>:
+                          </label>
                           <input
                             type="text"
                             name="title"
@@ -112,7 +114,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="form-group">
-                          <label>Address: </label>
+                          <label>
+                            Address<span className="required">*</span>:
+                          </label>
                           <input
                             type="text"
                             name="address"
@@ -130,7 +134,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label>State: </label>
+                          <label>
+                            State<span className="required">*</span>:
+                          </label>
                           <select
                             name="state"
                             id="state"
@@ -146,7 +152,9 @@ function FrmEvent() {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label>City: </label>
+                          <label>
+                            City<span className="required">*</span>:
+                          </label>
                           <select
                             name="city"
                             id="city"
@@ -166,7 +174,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="form-group">
-                          <label>Date: </label>
+                          <label>
+                            Date<span className="required">*</span>:
+                          </label>
                           <input
                             type="date"
                             name="date"
@@ -185,7 +195,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label>Start time: </label>
+                          <label>
+                            Start time<span className="required">*</span>:
+                          </label>
                           <input
                             type="time"
                             name="timeStart"
@@ -201,7 +213,9 @@ function FrmEvent() {
                       </div>
                       <div className="col-md-6">
                         <div className="form-group">
-                          <label>End time: </label>
+                          <label>
+                            End time<span className="required">*</span>:
+                          </label>
                           <input
                             type="time"
                             name="timeEnd"
@@ -219,7 +233,9 @@ function FrmEvent() {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="form-group">
-                          <label>Description: </label>
+                          <label>
+                            Description<span className="required">*</span>:
+                          </label>
                           <textarea
                             type="text"
                             name="description"
