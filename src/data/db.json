@@ -27,6 +27,13 @@
       "password": "12345",
       "id": 4,
       "admin": false
+    },
+    {
+      "userName": "blabla",
+      "email": "blabla@gmal.com",
+      "password": "4567",
+      "admin": false,
+      "id": 5
     }
   ],
   "events": [

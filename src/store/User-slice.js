@@ -10,7 +10,7 @@ const UserSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     setUserSession(state, actions) {
-      if (actions?.payload["userName"] && actions?.payload["admin"]) {
+      if (actions?.payload["userName"]) {
         state.userSession = actions.payload["userName"];
         state.isAdmin = actions.payload["admin"];
 

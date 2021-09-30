@@ -17,7 +17,7 @@ function Login() {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch(login(enteredUsername, enteredPassword)).then(() => {
+    dispatch(login(enteredUsername, enteredPassword)).then(() => {      
       if (sessionStorage.userSession) {
         history.push("/index");
       } else {
