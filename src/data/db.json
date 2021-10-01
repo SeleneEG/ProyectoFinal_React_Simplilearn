@@ -77,32 +77,6 @@
       "user": "SeleneEG"
     },
     {
-      "id": 5,
-      "title": "My event",
-      "address": "Mi direccion",
-      "country": "Mexico",
-      "city": "CDMX",
-      "state": "Estado",
-      "date": "2021-10-16",
-      "timeStart": "15:30",
-      "timeEnd": "16:20",
-      "description": "bla bla bla",
-      "user": "SeleneEG"
-    },
-    {
-      "title": "asd",
-      "address": "zxc",
-      "country": "Mexico",
-      "state": "Veracruz",
-      "city": "Orizaba",
-      "date": "2021-10-17",
-      "timeStart": "08:14",
-      "timeEnd": "08:14",
-      "description": "ioj",
-      "user": "SeleneEG",
-      "id": 6
-    },
-    {
       "title": "Student Giggles",
       "address": "The Fringe Bar, 26 Allen Street",
       "country": "Mexico",
@@ -114,6 +88,32 @@
       "description": "Comedy for students by students!\nEIGHT all-star student comedians take to the stage for a night of debt-reducing comedy.\n\nMC'd by “The Capital’s Funniest Bear” Neil Thornton!\n\nSeriously this lineup is STACKED.\nWe've got Award Winners.\nWe've got Raw Quest Finalists.\nWe've even got Unemployment Benefit Recipients!\n\nAll this for only $15?!?\nThat’s not even two jugs at JJs!\nSounds so good it is true!\n\nSo why not? Come finish the semester with some f*cking laughs!",
       "user": "test1",
       "id": 8
+    },
+    {
+      "title": "Assignment 2",
+      "address": "Eugenia 197",
+      "country": "Mexico",
+      "state": "Nayarit",
+      "city": "Compostela",
+      "date": "2021-10-30",
+      "timeStart": "19:35",
+      "timeEnd": "20:35",
+      "description": "bkababka",
+      "user": "test1",
+      "id": 9
+    },
+    {
+      "title": "Assignment 3",
+      "address": "poniente 12 No. 154",
+      "country": "Mexico",
+      "state": "Veracruz",
+      "city": "Aguilera",
+      "date": "2021-10-30",
+      "timeStart": "14:59",
+      "timeEnd": "17:56",
+      "description": "kjhkjhkj",
+      "user": "test1",
+      "id": 10
     }
   ]
 }

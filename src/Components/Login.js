@@ -8,16 +8,15 @@ function Login() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.User.userSession);
   const [enteredUsername, usernameChangeHandler] = useState("");
   const [enteredPassword, passwordChangeHandler] = useState("");
   const [showStrMsg, handleShowMsg] = useState(false);
 
-  useEffect(() => {}, [user]);
+  useEffect(() => {}, []);
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch(login(enteredUsername, enteredPassword)).then(() => {      
+    dispatch(login(enteredUsername, enteredPassword)).then(() => {
       if (sessionStorage.userSession) {
         history.push("/index");
       } else {

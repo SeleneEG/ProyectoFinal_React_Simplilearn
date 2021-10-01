@@ -12,7 +12,6 @@ function FrmEvent() {
   const LocationStates = useSelector((state) => state.Location.LocationStates);
   const StateCities = useSelector((state) => state.Location.StateCities);
   const UserRegion = useSelector((state) => state.Index.userRegion);
-  const userSession = useSelector((state) => state.User.userSession);
 
   const [loadedCities, loadedCitiesChangeHandler] = useState([]);
   const [enteredTitle, titleChangeHandler] = useState("");
@@ -40,7 +39,7 @@ function FrmEvent() {
       timeStart: enteredTimeStart,
       timeEnd: enteredTimeEnd,
       description: enteredDescription,
-      user: userSession,
+      user: sessionStorage.userSession,
     };
 
     dispatch(create(payload));

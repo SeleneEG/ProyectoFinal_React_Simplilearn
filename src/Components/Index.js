@@ -21,7 +21,7 @@ function Index() {
 
   useEffect(() => {
     dispatch(getAll());
-  }, [dispatch, ObjRst]);
+  }, [strMsg]);
 
   useEffect(() => {
     window.setTimeout(() => {
